@@ -11,3 +11,12 @@ jobs:
         run: |
           pwd
           ls -lart
+        - name: deploy container
+          run: |
+            docker image pull nginx
+            docker image ls 
+            docker container run -d -p 8080:80 nginx
+        - name: Test Web Deployment
+          run: 
+            python -c "import requests; r=requests.get('http://localhost:8080'); print(r.status_code)"
+            curl -s localhost:8080
