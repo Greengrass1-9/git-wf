@@ -1,0 +1,13 @@
+name: demo
+on: push
+
+jobs:
+  deploy_app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        run: actions/checkout~v4
+      -name: investigate environment
+        run: |
+          pwd
+          ls -lart
