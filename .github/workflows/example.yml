@@ -1,13 +1,13 @@
-name: demo
+name: demo_execute_001
 on: push
 
 jobs:
-  deploy_app:
+  deploy_app: # custom name - anything you want
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
         uses: actions/checkout@v4
-      -name: investigate environment
+      - name: investigate environment
         run: |
           pwd
           ls -lart
